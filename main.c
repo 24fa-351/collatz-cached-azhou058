@@ -22,13 +22,13 @@ int main(int argc, char *argv[]) {
 
     unsigned max_steps = 0;
     
-    for (unsigned ix = 0; ix < config->sample_count; ix++) {
+    for (unsigned i = 0; i < config->sample_count; i++) {
         unsigned long long rando = rand_between(config->range_min, config->range_max);
 
         unsigned steps = collatz_r(rando);
 
         if (steps > max_steps) {
-            printf("Count: %d       Number: %llu new max %u\n", ix, rando, steps);
+            printf("Count: %d       Number: %llu new max %u\n", i, rando, steps);
             max_steps = steps;
         }
     }
